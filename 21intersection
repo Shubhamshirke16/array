@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void printarr(int arr[],int n)
+{
+  for(int i=0;i<n;i++)
+  {
+    cout<<arr[i];
+  }
+}
+
+void findintersect(int arr1[],int arr2[],int n,int m)
+{
+  int i=0;
+  vector<int> res;
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      if(arr1[i]==arr2[j])
+      {
+       res.push_back(arr1[i]);
+       arr2[i]=-1;
+      }
+    }
+  }
+  for(int i=0;i<res.size();i++)
+  {
+    cout<<res[i];
+  }
+  
+}
+
+int main() 
+{
+    int arr1[5]={1,2,6,4,8},n=5;
+    int arr2[5]={2,1,5,9,8},m=5;
+    //reverse the array
+    findintersect(arr1,arr2,n,m);
+    return 0;
+}
